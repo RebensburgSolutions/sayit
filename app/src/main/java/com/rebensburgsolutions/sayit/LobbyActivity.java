@@ -1,15 +1,15 @@
 package com.rebensburgsolutions.sayit;
 
 import android.content.DialogInterface;
-import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.support.v7.app.AlertDialog;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Lobby extends AppCompatActivity {
+public class LobbyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
