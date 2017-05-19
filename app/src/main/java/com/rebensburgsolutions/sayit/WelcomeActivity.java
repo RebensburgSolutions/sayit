@@ -15,6 +15,7 @@ public class WelcomeActivity extends AppCompatActivity {
         button_go_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent openLobbyActivity = new Intent(WelcomeActivity.this, LobbyActivity.class);
                 startActivity(openLobbyActivity);
             }
