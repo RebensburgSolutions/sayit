@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class UsernameActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
 
     public Button button_go_username;
 
@@ -15,7 +15,7 @@ public class UsernameActivity extends AppCompatActivity {
         button_go_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent openLobbyActivity = new Intent(UsernameActivity.this, LobbyActivity.class);
+                Intent openLobbyActivity = new Intent(WelcomeActivity.this, LobbyActivity.class);
                 startActivity(openLobbyActivity);
             }
         });
@@ -24,7 +24,7 @@ public class UsernameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_username);
+        setContentView(R.layout.activity_welcome);
         init();
     }
 }
