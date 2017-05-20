@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SayIt</string>
+
+    <!-- Welcome page -->
+    <string name="welcome_title_1">Welcome to SayIt</string>
+    <string name="welcome_desc_1">Welcome to SayIt the game that will make your lessons less boring.</string>
+    <string name="welcome_title_2">Select your Nickname</string>
+    <string name="welcome_desc_2">This name will be presented to other players and can be changed in the settings later.</string>
+    <string name="previous">previous</string>
+    <string name="next">next</string>
+    <string name="got_it">done!</string>
 </resources>
