@@ -9,5 +9,11 @@
     <string name="previous">previous</string>
     <string name="next">next</string>
     <string name="got_it">done!</string>
+    <string name="title_activity_test">Test</string>
+    <string-array name="difficulty">
+      <item>Easy</item>
+      <item>Hard</item>
+    </string-array>
     <string name="no_username">You need to select a username first!</string>
+
 </resources>
