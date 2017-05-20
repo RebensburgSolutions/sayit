@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:hint="Nickname"
             android:inputType="text"
+            android:maxLength="16"
             android:textAlignment="center"
             android:textColor="#FFFFFF" />
 

@@ -10,12 +10,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class LobbyActivity extends AppCompatActivity {
-
+    Spinner spinner_difficulty;
+    ArrayAdapter<CharSequence> spinner_adapter;
     ArrayList<String> lobbyList = new ArrayList<>();
     ArrayAdapter<String> adapter;
     String selectedFromList;
@@ -24,10 +26,11 @@ public class LobbyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lobby);
+
+        //LobbyList
         adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, lobbyList);
         final ListView lobbiesList = (ListView) findViewById(R.id.lobbies);
         lobbiesList.setAdapter(adapter);
-
         lobbiesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long arg3) {
@@ -57,6 +60,23 @@ public class LobbyActivity extends AppCompatActivity {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+
+        //Difficulty Selection
+        spinner_difficulty = (Spinner)alertLayout.findViewById(R.id.spinner_difficulty);
+        spinner_adapter = ArrayAdapter.createFromResource(this, R.array.difficulty,android.R.layout.simple_spinner_item);
+        spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_difficulty.setAdapter(spinner_adapter);
+        spinner_difficulty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getBaseContext(),parent.getItemAtPosition(position)+"",Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
