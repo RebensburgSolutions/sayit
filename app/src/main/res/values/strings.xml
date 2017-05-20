@@ -9,4 +9,5 @@
     <string name="previous">previous</string>
     <string name="next">next</string>
     <string name="got_it">done!</string>
+    <string name="no_username">You need to select a username first!</string>
 </resources>
