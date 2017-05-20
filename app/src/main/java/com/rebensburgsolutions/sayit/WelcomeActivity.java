@@ -15,8 +15,11 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.rebensburgsolutions.sayit.utilities.PreferenceManager;
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -28,6 +31,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private int[] layouts;
     private Button btnPrevious, btnNext;
     private PreferenceManager prefManager;
+    private EditText username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +88,8 @@ public class WelcomeActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                username = (EditText) findViewById(R.id.et_username);
                 // checking for last page
                 // if last page home screen will be launched
                 int current = getItem(+1);
@@ -91,7 +97,13 @@ public class WelcomeActivity extends AppCompatActivity {
                     // move to next screen
                     viewPager.setCurrentItem(current);
                 } else {
-                    launchHomeScreen();
+                    if(username.getText().toString().trim().equals("")) {
+                        viewPager.setCurrentItem(1);
+                        Toast.makeText(WelcomeActivity.this, getString(R.string.no_username), Toast.LENGTH_SHORT).show();
+                    } else {
+                        prefManager.setUsername(username.getText().toString().trim());
+                        launchHomeScreen();
+                    }
                 }
             }
         });
@@ -121,6 +133,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private void launchHomeScreen() {
+        Toast.makeText(this, prefManager.getUsername(), Toast.LENGTH_SHORT).show();
         prefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(WelcomeActivity.this, LobbyActivity.class));
         finish();
