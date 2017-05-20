@@ -1,30 +1,20 @@
 package com.rebensburgsolutions.sayit;
 
 import android.content.DialogInterface;
-import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class LobbyActivity extends AppCompatActivity {
 
-    ArrayList<String> lobbyList = new ArrayList<>();
-    ArrayAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lobby);
-        adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, lobbyList);
-        ListView lobbiesList = (ListView) findViewById(R.id.lobbies);
-        lobbiesList.setAdapter(adapter);
-
     }
     public void createButtonClicked(View view) {
         LayoutInflater inflater = getLayoutInflater();
@@ -49,10 +39,8 @@ public class LobbyActivity extends AppCompatActivity {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String lobbyName = tfLobbyname.getText().toString();
-                Toast.makeText(getBaseContext(), "Lobbyname: " + lobbyName, Toast.LENGTH_SHORT).show();
-                lobbyList.add(""+lobbyName);
-                adapter.notifyDataSetChanged();
+                String user = tfLobbyname.getText().toString();
+                Toast.makeText(getBaseContext(), "Lobbyname: " + user, Toast.LENGTH_SHORT).show();
             }
         });
         AlertDialog dialog = alert.create();
