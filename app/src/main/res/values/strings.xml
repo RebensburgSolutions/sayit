@@ -15,5 +15,6 @@
         <item>Hard</item>
     </string-array>
     <string name="no_username">You need to select a username first!</string>
+    <string name="edit">edit</string>
 
 </resources>

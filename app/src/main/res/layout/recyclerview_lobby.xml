@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp"
+    android:paddingBottom="8dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sven"
+        android:id="@+id/tv_username"
+        android:gravity="left"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="'Affe'"
+        android:textAlignment="center"
+        android:layout_toLeftOf="@+id/tv_points"
+        android:layout_toStartOf="@id/tv_points"
+        android:layout_toRightOf="@+id/tv_username"
+        android:layout_toEndOf="@+id/tv_username"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20 Punkte"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tv_points"
+        android:layout_alignParentRight="true"
+        android:textSize="20sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"></View>
+
+</RelativeLayout>
