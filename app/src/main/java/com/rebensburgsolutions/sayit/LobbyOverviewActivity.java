@@ -13,14 +13,18 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.rebensburgsolutions.sayit.adapters.LobbyAdapter;
+
 import java.util.ArrayList;
 
 public class LobbyOverviewActivity extends AppCompatActivity {
     Spinner spinner_difficulty;
     ArrayAdapter<CharSequence> spinner_adapter;
-    ArrayList<String> lobbyList = new ArrayList<>();
-    ArrayAdapter<String> adapter;
-    String selectedFromList;
+    ArrayList<String[]> lobbyList = new ArrayList<>();
+    LobbyAdapter adapter2;
+    String[] selectedFromList;
+    String[] createArray = new String[2];
+    String lobbyName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,20 +32,23 @@ public class LobbyOverviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lobby_overview);
 
         //LobbyList
-        adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, lobbyList);
+        String[] testData = {"Lobby name","10/10"};
+        lobbyList.add(testData);
+        adapter2 = new LobbyAdapter(this, lobbyList);
         final ListView lobbiesList = (ListView) findViewById(R.id.lobbies);
-        lobbiesList.setAdapter(adapter);
+        lobbiesList.setAdapter(adapter2);
         lobbiesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long arg3) {
-                selectedFromList =(String) (lobbiesList.getItemAtPosition(position));
+                selectedFromList = (String[]) (lobbiesList.getItemAtPosition(position));
+                lobbyName = selectedFromList[0];
             }
         });
 
     }
 
     public void joinButtonClicked(View view){
-        Toast.makeText(getBaseContext(), "Join "+selectedFromList, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "Join "+lobbyName, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -87,9 +94,11 @@ public class LobbyOverviewActivity extends AppCompatActivity {
                 String lobbyName = tfLobbyname.getText().toString();
                 Toast.makeText(getBaseContext(), "Lobbyname: " + lobbyName, Toast.LENGTH_SHORT).show();
                 if(lobbyName.length()>0){
-                    lobbyList.add(""+lobbyName);
+                    createArray[0]=lobbyName;
+                    createArray[1]="";
+                    lobbyList.add(createArray);
                 }
-                adapter.notifyDataSetChanged();
+                adapter2.notifyDataSetChanged();
             }
         });
         AlertDialog dialog = alert.create();
