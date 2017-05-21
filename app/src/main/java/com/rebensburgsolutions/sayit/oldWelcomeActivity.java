@@ -16,7 +16,7 @@ public class oldWelcomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent openLobbyActivity = new Intent(oldWelcomeActivity.this, LobbyActivity.class);
+                Intent openLobbyActivity = new Intent(oldWelcomeActivity.this, LobbyOverviewActivity.class);
                 startActivity(openLobbyActivity);
             }
         });

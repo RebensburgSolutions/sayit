@@ -135,7 +135,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private void launchHomeScreen() {
         Toast.makeText(this, prefManager.getUsername(), Toast.LENGTH_SHORT).show();
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(WelcomeActivity.this, LobbyActivity.class));
+        startActivity(new Intent(WelcomeActivity.this, LobbyOverviewActivity.class));
         finish();
     }
 
