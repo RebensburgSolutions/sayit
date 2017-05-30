@@ -3,10 +3,13 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="false">
 
 
     <TextView
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
         android:id="@+id/lobby_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,6 +21,9 @@
         android:text="TextView" />
 
     <TextView
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
         android:id="@+id/player_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

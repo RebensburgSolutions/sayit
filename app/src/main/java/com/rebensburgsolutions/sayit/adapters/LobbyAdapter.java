@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.rebensburgsolutions.sayit.LobbyOverviewActivity;
 import com.rebensburgsolutions.sayit.R;
 
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ public class LobbyAdapter extends ArrayAdapter<String[]> {
         this.context = context;
         this.data = data;
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

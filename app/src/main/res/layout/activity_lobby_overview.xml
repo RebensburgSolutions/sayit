@@ -54,6 +54,7 @@
 
 
     <ListView
+        android:focusable="false"
         android:id="@+id/lobbies"
         android:layout_width="match_parent"
         android:layout_height="0dp"

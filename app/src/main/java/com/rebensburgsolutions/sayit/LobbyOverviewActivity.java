@@ -22,6 +22,7 @@ public class LobbyOverviewActivity extends AppCompatActivity {
     ArrayAdapter<CharSequence> spinner_adapter;
     ArrayList<String[]> lobbyList = new ArrayList<>();
     LobbyAdapter adapter2;
+    ArrayAdapter adapter3;
     String[] selectedFromList;
     String[] createArray = new String[2];
     String lobbyName = "";
@@ -33,13 +34,17 @@ public class LobbyOverviewActivity extends AppCompatActivity {
 
         //LobbyList
         String[] testData = {"Lobby name","10/10"};
-        lobbyList.add(testData);
+
         adapter2 = new LobbyAdapter(this, lobbyList);
         final ListView lobbiesList = (ListView) findViewById(R.id.lobbies);
         lobbiesList.setAdapter(adapter2);
+        for(int i=0;i<10;i++){
+        lobbyList.add(testData);}
         lobbiesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long arg3) {
+
+                Toast.makeText(getBaseContext(), (position+" selected "+lobbyName), Toast.LENGTH_SHORT).show();
                 selectedFromList = (String[]) (lobbiesList.getItemAtPosition(position));
                 lobbyName = selectedFromList[0];
             }
