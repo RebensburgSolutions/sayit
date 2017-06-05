@@ -28,13 +28,14 @@ public class LobbyAdapter extends ArrayAdapter<String[]> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+
+
         LayoutInflater inflater = ((Activity)context).getLayoutInflater();
         View customRow = inflater.inflate(R.layout.layout_lobbyrow, parent, false);;
 
         String[] rowContent = getItem(position);
-        TextView lobbyName = (TextView) customRow.findViewById(R.id.lobby_name);
+        final TextView lobbyName = (TextView) customRow.findViewById(R.id.lobby_name);
         TextView playerAmount = (TextView) customRow.findViewById(R.id.player_amount);
-
         lobbyName.setText(rowContent[0]);
         playerAmount.setText(rowContent[1]);
         return customRow;

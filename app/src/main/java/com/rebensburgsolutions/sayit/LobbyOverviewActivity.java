@@ -40,6 +40,7 @@ public class LobbyOverviewActivity extends AppCompatActivity {
         lobbiesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long arg3) {
+                Toast.makeText(getBaseContext(),"clicked",Toast.LENGTH_LONG);
                 selectedFromList = (String[]) (lobbiesList.getItemAtPosition(position));
                 lobbyName = selectedFromList[0];
             }
