@@ -33,7 +33,7 @@ public class LobbyOverviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lobby_overview);
 
         //LobbyList
-        String[] testData = {"Lobby name","10/10"};
+        String[] testData = {"Example lobby","7/10"};
 
         adapter2 = new LobbyAdapter(this, lobbyList);
         final ListView lobbiesList = (ListView) findViewById(R.id.lobbies);
@@ -83,7 +83,7 @@ public class LobbyOverviewActivity extends AppCompatActivity {
         spinner_difficulty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getBaseContext(),parent.getItemAtPosition(position)+"",Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(),parent.getItemAtPosition(position)+"",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -100,7 +100,7 @@ public class LobbyOverviewActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), "Lobbyname: " + lobbyName, Toast.LENGTH_SHORT).show();
                 if(lobbyName.length()>0){
                     createArray[0]=lobbyName;
-                    createArray[1]="";
+                    createArray[1]="X/10";
                     lobbyList.add(createArray);
                 }
                 adapter2.notifyDataSetChanged();
