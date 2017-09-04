@@ -1,6 +1,7 @@
 package com.rebensburgsolutions.sayit;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -55,6 +56,8 @@ public class LobbyOverviewActivity extends AppCompatActivity {
     public void joinButtonClicked(View view){
         Toast.makeText(getBaseContext(), "Join "+lobbyName, Toast.LENGTH_SHORT).show();
 
+        Intent lobbyIntent = new Intent(this, LobbyActivity.class);
+        startActivity(lobbyIntent);
     }
 
     public void createButtonClicked(View view) {
