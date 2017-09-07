@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "471059252806",
+    "firebase_url": "https://sayit-73982.firebaseio.com",
+    "project_id": "sayit-73982",
+    "storage_bucket": "sayit-73982.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:471059252806:android:47bec9d3972f1b1d",
+        "android_client_info": {
+          "package_name": "com.rebensburgsolutions.sayit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "471059252806-njlnd1nkp0l8jhsifvlrm64usi39t3r8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rebensburgsolutions.sayit",
+            "certificate_hash": "6e759d6f9f31c2d8302d831dcdbbb54b03f812a5"
+          }
+        },
+        {
+          "client_id": "471059252806-o78226nssp3ibkcntb7ht8dkqp203lnk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWY4VfkJ3IJFq2mXUqwkoZriaqvQI6b9U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "471059252806-o78226nssp3ibkcntb7ht8dkqp203lnk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
