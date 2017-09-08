@@ -53,6 +53,8 @@ public class RegisterActivity extends AppCompatActivity {
                 if (user != null) {
                    //Benutzer angemeldet
                     Log.d("info", "onAuthStateChanged:signed_in:" + user.getUid());
+                    Intent i = new Intent(getApplicationContext(), LobbyActivity.class);
+                    startActivity(i);
                 } else {
                     //nicht angemeldet
                     Log.d("info", "onAuthStateChanged:signed_out");
@@ -91,25 +93,43 @@ public class RegisterActivity extends AppCompatActivity {
 
         String email = etMail.getText().toString();
         String password = etPassword.getText().toString();
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d("info", "createUserWithEmail:onComplete:" + task.isSuccessful());
+        String username = etUsername.getText().toString();
+
+        if(!email.trim().isEmpty()
+                && !password.trim().isEmpty()
+                && !username.trim().isEmpty()){
 
 
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Login Failed",
-                                    Toast.LENGTH_SHORT).show();
-                        }else{
-                            Intent i = new Intent(getApplicationContext(), LobbyActivity.class);
-                            startActivity(i);
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Log.d("info", "createUserWithEmail:onComplete:" + task.isSuccessful());
+
+
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(), "Login Failed",
+                                        Toast.LENGTH_SHORT).show();
+                            }else{
+                                Intent i = new Intent(getApplicationContext(), LobbyActivity.class);
+                                startActivity(i);
+                            }
+
+
                         }
+                    });
+        }else{
+            Toast.makeText(getApplicationContext(), "Bitte alle Felder ausfüllen", Toast.LENGTH_LONG).show();
+        }
 
-                        // ...
-                    }
-                });
-    }
+
+
+
+
+
+        }
+
+
 
 
 }
