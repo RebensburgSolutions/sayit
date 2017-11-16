@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://Z:\Eigene Dateien\Development\Java\sayit\app\app.iml" filepath="Z:\Eigene Dateien\Development\Java\sayit\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/sayit.iml" filepath="$PROJECT_DIR$/sayit.iml" />
-      <module fileurl="file://Z:\Eigene Dateien\Development\Java\sayit\sayit.iml" filepath="Z:\Eigene Dateien\Development\Java\sayit\sayit.iml" />
     </modules>
   </component>
 </project>

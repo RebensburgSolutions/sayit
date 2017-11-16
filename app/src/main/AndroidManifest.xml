@@ -10,27 +10,33 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".WelcomeActivity"
-            android:theme="@style/NoActionBar"></activity>
+            android:theme="@style/NoActionBar"
+            android:noHistory="true"/>
         <activity android:name=".LobbyOverviewActivity" />
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".WelcomeRegisterOrLoginActivity"
-            android:theme="@style/LoginTheme"/>
+            android:theme="@style/LoginTheme"
+            android:noHistory="true"/>
         <activity
             android:name=".LobbyActivity"
+            android:noHistory="true"
             android:parentActivityName=".LobbyOverviewActivity" />
         <activity
             android:name=".WelcomeRegisterOrLoginActivity"
-            android:theme="@style/LoginTheme">
+            android:theme="@style/LoginTheme"
+            android:noHistory="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"
-            android:theme="@style/LoginTheme"
-            android:parentActivityName=".WelcomeRegisterOrLoginActivity"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".WelcomeRegisterOrLoginActivity"
+            android:theme="@style/LoginTheme" />
+        <activity android:name=".FillLobbyActivity"></activity>
     </application>
 
 </manifest>

@@ -53,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (user != null) {
                    //Benutzer angemeldet
                     Log.d("info", "onAuthStateChanged:signed_in:" + user.getUid());
-                    Intent i = new Intent(getApplicationContext(), LobbyActivity.class);
+                    Intent i = new Intent(getApplicationContext(), LobbyOverviewActivity.class);
                     startActivity(i);
                 } else {
                     //nicht angemeldet
