@@ -17,15 +17,15 @@ import java.util.ArrayList;
 
 
 //TODO Needs to be changed later!
-public class LobbyRecyclerAdapter extends RecyclerView.Adapter<LobbyRecyclerAdapter.LobbyRecyclerViewHolder> {
+public class PlayerStatsRecyclerAdapter extends RecyclerView.Adapter<PlayerStatsRecyclerAdapter.LobbyRecyclerViewHolder> {
 
     private ArrayList<String> items;
 
-    public LobbyRecyclerAdapter(ArrayList<String> items) {
+    public PlayerStatsRecyclerAdapter(ArrayList<String> items) {
         this.items = items;
     }
 
-    public LobbyRecyclerAdapter() {
+    public PlayerStatsRecyclerAdapter() {
     }
 
     @Override

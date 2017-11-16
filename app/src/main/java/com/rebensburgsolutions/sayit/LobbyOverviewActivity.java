@@ -39,8 +39,10 @@ public class LobbyOverviewActivity extends AppCompatActivity {
         adapter2 = new LobbyAdapter(this, lobbyList);
         final ListView lobbiesList = (ListView) findViewById(R.id.lobbies);
         lobbiesList.setAdapter(adapter2);
-        for(int i=0;i<10;i++){
-        lobbyList.add(testData);}
+        //create test lobbies
+        for(int i=0;i<2;i++){
+            lobbyList.add(testData);
+        }
         lobbiesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long arg3) {
@@ -62,8 +64,9 @@ public class LobbyOverviewActivity extends AppCompatActivity {
 
     public void createButtonClicked(View view) {
         LayoutInflater inflater = getLayoutInflater();
-        View alertLayout = inflater.inflate(R.layout.layout_createlobbypopup, null);
+        View alertLayout = inflater.inflate(R.layout.dialog_create_lobby, null);
         final EditText tfLobbyname = (EditText) alertLayout.findViewById(R.id.tf_lobbyname);
+
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Create Lobby");
@@ -102,11 +105,10 @@ public class LobbyOverviewActivity extends AppCompatActivity {
                 String lobbyName = tfLobbyname.getText().toString();
                 Toast.makeText(getBaseContext(), "Lobbyname: " + lobbyName, Toast.LENGTH_SHORT).show();
                 if(lobbyName.length()>0){
-                    createArray[0]=lobbyName;
-                    createArray[1]="X/10";
-                    lobbyList.add(createArray);
+                    Intent i = new Intent(LobbyOverviewActivity.this, FillLobbyActivity.class);
+                    startActivity(i);
                 }
-                adapter2.notifyDataSetChanged();
+
             }
         });
         AlertDialog dialog = alert.create();
