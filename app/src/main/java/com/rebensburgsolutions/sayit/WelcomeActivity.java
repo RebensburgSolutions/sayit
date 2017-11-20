@@ -59,8 +59,8 @@ public class WelcomeActivity extends AppCompatActivity {
         // layouts of all welcome sliders
         // add few more layouts if you want
         layouts = new int[]{
-                R.layout.activity_welcome1,
-                R.layout.activity_login};
+                R.layout.welcome_screen_1,
+                R.layout.welcome_screen_2};
 
         // adding bottom dots
         addBottomDots(0);
@@ -135,7 +135,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private void launchHomeScreen() {
         Toast.makeText(this, prefManager.getUsername(), Toast.LENGTH_SHORT).show();
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(WelcomeActivity.this, LobbyOverviewActivity.class));
+        startActivity(new Intent(WelcomeActivity.this, OverviewActivity.class));
         finish();
     }
 

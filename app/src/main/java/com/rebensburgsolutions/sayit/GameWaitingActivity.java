@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class FillLobbyActivity extends AppCompatActivity {
+public class GameWaitingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class FillLobbyActivity extends AppCompatActivity {
     }
 
     public void startGame(View view){
-        Intent i = new Intent(FillLobbyActivity.this, LobbyActivity.class);
+        Intent i = new Intent(GameWaitingActivity.this, GameActivity.class);
         startActivity(i);
     }
 }

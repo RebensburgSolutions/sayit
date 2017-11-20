@@ -22,11 +22,7 @@
         <ImageView
             android:layout_width="@dimen/img_width_height"
             android:layout_height="@dimen/img_width_height"
-            android:src="@mipmap/sayit_logo"
-            android:layout_marginBottom="30dp"/>
-
-
-
+            android:src="@mipmap/sayit_logo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,26 +33,7 @@
             android:text="@string/welcome_desc_1"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/slide_desc"
-            android:layout_marginBottom="15dp"/>
-
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:background="@drawable/shape_roundedbutton"
-            android:backgroundTint="#fff"
-            android:layout_marginBottom="10dp"
-            />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="Register"
-            android:background="@drawable/shape_roundedbutton"
-            android:backgroundTint="#fff"
-            />
+            android:textSize="@dimen/slide_desc" />
     </LinearLayout>
 
 </RelativeLayout>

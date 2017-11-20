@@ -20,7 +20,7 @@ import com.rebensburgsolutions.sayit.adapters.PlayerStatsRecyclerAdapter;
 
 import java.util.ArrayList;
 
-public class LobbyActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
 
     private ArrayList<String> stringArrayList;
     private RecyclerView playerList;
@@ -73,13 +73,6 @@ public class LobbyActivity extends AppCompatActivity {
         for (int i = 0; i < 20; i++) {
             stringArrayList.add("Item " + (i + 1));
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_lobby, menu);
-        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

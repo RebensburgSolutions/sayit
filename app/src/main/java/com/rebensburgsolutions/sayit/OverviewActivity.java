@@ -18,7 +18,7 @@ import com.rebensburgsolutions.sayit.adapters.LobbyAdapter;
 
 import java.util.ArrayList;
 
-public class LobbyOverviewActivity extends AppCompatActivity {
+public class OverviewActivity extends AppCompatActivity {
     Spinner spinner_difficulty;
     ArrayAdapter<CharSequence> spinner_adapter;
     ArrayList<String[]> lobbyList = new ArrayList<>();
@@ -58,7 +58,7 @@ public class LobbyOverviewActivity extends AppCompatActivity {
     public void joinButtonClicked(View view){
         Toast.makeText(getBaseContext(), "Join "+lobbyName, Toast.LENGTH_SHORT).show();
 
-        Intent lobbyIntent = new Intent(this, LobbyActivity.class);
+        Intent lobbyIntent = new Intent(this, GameActivity.class);
         startActivity(lobbyIntent);
     }
 
@@ -105,7 +105,7 @@ public class LobbyOverviewActivity extends AppCompatActivity {
                 String lobbyName = tfLobbyname.getText().toString();
                 Toast.makeText(getBaseContext(), "Lobbyname: " + lobbyName, Toast.LENGTH_SHORT).show();
                 if(lobbyName.length()>0){
-                    Intent i = new Intent(LobbyOverviewActivity.this, FillLobbyActivity.class);
+                    Intent i = new Intent(OverviewActivity.this, GameWaitingActivity.class);
                     startActivity(i);
                 }
 
