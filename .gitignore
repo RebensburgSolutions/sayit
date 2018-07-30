@@ -9,3 +9,5 @@
 .externalNativeBuild
 
 *.lnk
+
+\.idea/caches/
